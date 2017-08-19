@@ -1,0 +1,2 @@
+# taitanic-kaggle
+kaggleのタイタニックデータセットチャレンジ
