@@ -4,11 +4,13 @@ from sklearn.ensemble import RandomForestClassifier
 
 def main():
   data = InputData()
-  forest = RandomForestClassifier()
-  forest.fit(data(), data.train_labels)
-
-  train_predict = forest.predict(data())
-  print(accuracy(train_predict, data.train_labels))
+  for i in range(1,100):
+    forest = RandomForestClassifier(n_estimators=i)
+    forest.fit(data(), data.train_labels)
+    train_predict = forest.predict(data())
+    print(accuracy(train_predict, data.train_labels))
+  
+  test_predicts = forest.predict(data(train=False))
   
   with open('./submit.csv', 'w') as f:
     writer = csv.writer(f)
